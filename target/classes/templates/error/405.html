@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+
+    <main class="mt-4">
+        <div class="jumbotron mt-3 bg-re">
+            <h1 class="text-white">Not Allowed Page: ERROR status=405!</h1>
+            <hr class="hr-2"/>
+            <h4 class="text-white">You are not allowed to execute the current operation!</h4>
+        </div>
+    </main>
+
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+
+</div>
+</body>
+</html>

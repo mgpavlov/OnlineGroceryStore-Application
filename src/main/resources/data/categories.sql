@@ -1,0 +1,12 @@
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('3057b100-1e6e-425e-8d42-e360eb5dcc47', false, 'Meat And Fish');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('54c41dd6-173e-480b-b29c-966871cda4dc', false, 'Meats And Salami');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('781faf36-446f-45d1-a81a-6d4cea0854eb', false, 'Bread And Tortilas');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('9218c278-21d3-46be-9014-56fc2acd469b', false, 'Packaged');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('a05e844f-a59b-4fa6-9240-6a76da999059', false, 'Dairy and chilled');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('a688f4f6-4047-4313-952e-f0646023c2de', false, 'Fruits And Vegetables');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('b321ea69-aba6-4b52-8230-3d5fa94590ee', false, 'Baby & Child');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('b4662b4f-cf0a-4f11-a246-0216e1060930', false, 'Cosmetics');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('d7c26365-704a-433b-9f9e-99a5ccc56752', false, 'Pharmacy');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('dbab687a-4028-419f-9b99-0ced0991e09f', false, 'Drinks');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('dc93559f-a3ae-4df8-842d-5440446123ee', false, 'Frozen');
+INSERT INTO online_grocery_db.categories (id, deleted, category_name) VALUES ('ed97cd74-6513-40c8-9859-4b60959f846d', false, 'Pets');

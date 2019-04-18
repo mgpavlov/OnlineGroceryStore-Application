@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+<body>
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+<main>
+    <h3 th:text="|${greeting}, ${#authentication.getPrincipal().getUsername()}!|" class="text-center brush-script"></h3>
+    <div>
+        <div class="row d-flex justify-content-between">
+            <div class="data col-md">
+                <h1 class="text-center brush-script font-weight-bold" id="categoryTittle" th:text="|Sales|"></h1>
+            </div>
+            <div class="print-container container-fluid">
+                <div class="row mb-4 d-flex justify-content-start products-data">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+<script th:src="@{/js/sales.js}"></script>
+</body>
+</html>

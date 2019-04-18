@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+
+<main class="mt-4 mb-4">
+    <div class="jumbotron mt-3 bg-re text-center w-50 m-auto">
+        <figure>
+            <img src="https://thevoicefinder.com/wp-content/themes/the-voice-finder/images/default-img.png" alt=""
+                 class="img-circle" style="width:75px;" id="user-img">
+        </figure>
+        <h3 class="text-white d-inline-block mr-2">Username: </h3>
+        <h3 class="d-inline-block" th:text="${viewModel.username}"></h3>
+        <hr class="hr-2" color="white"/>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="text-white">Email:</h5>
+            </div>
+            <div class="col-md-6">
+                <h5 th:text="${viewModel.email}"></h5>
+            </div>
+        </div>
+        <hr class="hr-2" color="white"/>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="text-white">Shipping Address:</h5>
+            </div>
+            <div class="col-md-6">
+                <h5 th:text="${viewModel.address}"></h5>
+            </div>
+        </div>
+        <hr class="hr-2" color="white"/>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Authorities:</h5>
+            </div>
+            <div class="col-md-6">
+                <h6 th:each="role : ${viewModel.authorities}" th:text="${role.authority}">Item
+                    description here...</h6>
+            </div>
+        </div>
+
+        <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+            <hr class="hr-2" color="white"/>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="text-white">Set Authorities:</h5>
+                </div>
+                <div class="col-md-8">
+                    <form th:action="@{/users/edit/role/{id}(id=${viewModel.id})}" method="post">
+                        <div class="custom-control custom-radio d-inline-block">
+                            <input class="custom-control-input" type="radio" name="role" th:id="roleUser"
+                                   th:value="ROLE_USER">
+                            <label class="custom-control-label" th:for="roleUser" th:text="User"></label>
+                        </div>
+                        <div class="custom-control custom-radio d-inline-block ml-2">
+                            <input class="custom-control-input" type="radio" name="role" th:id="roleModerator"
+                                   th:value="ROLE_MODERATOR">
+                            <label class="custom-control-label" th:for="roleModerator" th:text="Moderator"></label>
+                        </div>
+                        <div class="custom-control custom-radio d-inline-block ml-2">
+                            <input class="custom-control-input" type="radio" name="role" th:id="roleAdmin"
+                                   th:value="ROLE_ADMIN">
+                            <label class="custom-control-label" th:for="roleAdmin" th:text="Admin"></label>
+                        </div>
+                        <button id="submitButton" class="btn btn-success ml-3" style="background-color: #7abaff"
+                                th:text="Update"></button>
+                    </form>
+                </div>
+            </div>
+        </th:block>
+    </div>
+</main>
+
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+
+</body>
+</html>

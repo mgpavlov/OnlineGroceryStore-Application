@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+
+    <main class="mt-5">
+        <div class="jumbotron bg-re-form w-25 m-auto">
+            <h2 class="text-center brush-script mc-colorize">Sing Up</h2>
+
+            <form th:action="@{/register}" th:method="post" th:object="${model}">
+                <div class="form-group" th:classappend="${#fields.hasErrors('username')}? 'text-danger'">
+                    <label for="inputUsername" class="brush-script">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" name="username" th:field="*{username}"
+                           placeholder="Enter username...">
+                    <small id="usernameHelp" th:each="error : ${#fields.errors('username')}" th:text="${error}">
+                        Error Message
+                    </small>
+                </div>
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'text-danger'">
+                    <label for="inputPassword" class="brush-script">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" name="password" th:field="*{password}"
+                           placeholder="Password...">
+                    <small id="passwordHelp" th:each="error : ${#fields.errors('password')}" th:text="${error}">
+                        Error Message
+                    </small>
+                </div>
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('confirmPassword')}? 'text-danger'">
+                    <label for="inputConfirmPassword" class="brush-script">Confirm Password</label>
+                    <input type="password" class="form-control" id="inputConfirmPassword" name="confirmPassword" th:field="*{confirmPassword}"
+                           placeholder="Confirm Password...">
+                    <small id="confirmPasswordHelp" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">
+                        Error Message
+                    </small>
+                </div>
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('address')}? 'text-danger'">
+                    <label for="inputShippingAddress" class="brush-script">Shipping Address</label>
+                    <input type="text" class="form-control" id="inputShippingAddress" name="address" th:field="*{address}"
+                           placeholder="Shipping Address...">
+                    <small id="addresHelp" th:each="error : ${#fields.errors('address')}" th:text="${error}">
+                        Error Message
+                    </small>
+                </div>
+
+                <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'text-danger'">
+                    <label for="inputEmail" class="brush-script">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="email" th:field="*{email}"
+                           placeholder="Enter email...">
+                    <small id="emailHelp" th:each="error : ${#fields.errors('email')}" th:text="${error}">
+                        Error Message
+                    </small>
+                </div>
+                <button type="submit" class="btn w-100 bg-re"><i class="fas fa-user-plus"></i>Register</button>
+            </form>
+
+        </div>
+    </main>
+
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+
+</div>
+
+<script>
+    function htmlEscape(input) {
+        input.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+</script>
+
+</body>
+</html>

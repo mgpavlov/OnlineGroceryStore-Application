@@ -1,0 +1,46 @@
+<th:block th:fragment="product-form" th:object="${model}">
+    <div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'text-danger'">
+        <label for="add-product-name" class="font-weight-bold">Name</label>
+        <input type="text" th:field="*{name}" class="form-control" id="add-product-name" name="name"
+               placeholder="Name...">
+        <small id="nameHelp" th:each="error : ${#fields.errors('name')}" th:text="${error}">
+            Error Message
+        </small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'text-danger'">
+        <label for="inputDescription" class="font-weight-bold">Description</label>
+        <textarea class="form-control" th:field="*{description}" id="inputDescription" rows="2" name="description"
+                  placeholder="Description..."></textarea>
+        <small id="descriptionHelp" th:each="error : ${#fields.errors('description')}" th:text="${error}">
+            Error Message
+        </small>
+    </div>
+    <div class="form-group mt-2" th:classappend="${#fields.hasErrors('price')}? 'text-danger'">
+        <label for="inputPrice" class="font-weight-bold">Price</label>
+        <input type="number" step="any" min="0.00" class="form-control" th:field="*{price}" id="inputPrice" name="price"
+               placeholder="Price...">
+        <small id="priceHelp" th:each="error : ${#fields.errors('price')}" th:text="${error}">
+            Error Message
+        </small>
+    </div>
+
+    <div class="form-group" th:classappend="${#fields.hasErrors('categories')}? 'text-danger'">
+        <label for="add-product-categories" class="font-weight-bold">Categories</label>
+        <select multiple class="form-control" id="add-product-categories" name="categories" th:field="*{categories}">
+            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+        </select>
+        <small id="categoriesHelp" th:each="error : ${#fields.errors('categories')}" th:text="${error}">
+            Error Message
+        </small>
+    </div>
+    <div class="form-group" th:classappend="${#fields.hasErrors('image')}? 'text-danger'">
+        <label for="add-product-image" class="font-weight-bold">Image</label>
+        <input type="file" class="form-control-file" id="add-product-image" name="image" th:field="*{image}">
+        <small id="imageHelp" th:each="error : ${#fields.errors('image')}" th:text="${error}">
+            Error Message
+        </small>
+    </div>
+    <div class="button-holder d-flex justify-content-center">
+        <button id="submitButton" type="submit" class="btn bg-re">Add Product</button>
+    </div>
+</th:block>

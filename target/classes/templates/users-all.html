@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+<main>
+    <div class="jumbotron bg-transparent w-75 m-auto">
+        <h1 class="d-inline-block brush-script">Users List</h1>
+        <div class="row search float-right pr-2">
+            <div class="col-8 pl-0">
+                <input type="text" th:name="username"
+                       class="form-control d-inline-block" id="inputUsername"
+                       placeholder="Username..."/>
+            </div>
+            <div class="col-md-4 pl-0">
+                <button class="btn btn-info brush-script" onclick="findUserByUsername()">
+                    <i class="fas fa-search"></i> Find
+                </button>
+            </div>
+        </div>
+        <hr class="hr-2 bg-dark w-100">
+        <table class="table table-hover"></table>
+        <hr class="hr-2 bg-dark w-100">
+    </div>
+</main>
+
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+
+<script th:src="@{/js/users-all.js}"></script>
+<script th:src="@{/js/users-search.js}"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+
+<main class="mt-3">
+    <div class="container re-background mt-3 rounded pt-2 mb-3">
+        <h2 class="d-inline-block">Manage Orders</h2>
+        <div class="float-right ml-5 mc-radio pt-3">
+            <div class="custom-control custom-radio mr-5 d-inline-block">
+                <input type="radio" class="custom-control-input" id="allOrders" name="inlineRadioOptions"
+                       value="All" required>
+                <label class="custom-control-label font-weight-bold" for="allOrders">All Orders</label>
+            </div>
+            <div class="custom-control custom-radio mr-5 d-inline-block">
+                <input type="radio" class="custom-control-input" id="Pending" name="inlineRadioOptions"
+                       value="Pending" required>
+                <label class="custom-control-label font-weight-bold" for="Pending">Pending</label>
+            </div>
+            <div class="custom-control custom-radio ml-5 mr-5 mb-3 d-inline-block">
+                <input type="radio" class="custom-control-input" id="Shipped" name="inlineRadioOptions"
+                       value="Shipped" required>
+                <label class="custom-control-label font-weight-bold" for="Shipped">Shipped</label>
+            </div>
+            <div class="custom-control custom-radio ml-5 mr-5 mb-3 d-inline-block">
+                <input type="radio" class="custom-control-input" id="Delivered" name="inlineRadioOptions"
+                       value="Delivered" required>
+                <label class="custom-control-label font-weight-bold" for="Delivered">Delivered</label>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-center text-dark mt-3" id="headline">All Orders</h1>
+    <hr class="hr-2 bg-dark w-75">
+    <table id="ordersTable" class="table table-hover w-75 mx-auto">
+        <thead>
+        <tr class="row mx-auto">
+            <th class="col-md-1 text-center">#</th>
+            <th class="col-md-3 text-center">Customer</th>
+            <th class="col-md-3 text-center">Issued On</th>
+            <th class="col-md-1 text-center">Total Price</th>
+            <th class="col-md-2 text-center">Order Status</th>
+            <th class="col-md-2 text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <th:block th:each="order, iter : ${orders}" th:object="${order}">
+            <tr class="row mx-auto">
+                <th class="col-md-1 text-center" th:text="${iter.index + 1}"></th>
+                <td class="col-md-3 text-center" th:text="*{customer.username}"></td>
+                <td class="col-md-3 text-center"
+                    th:text="*{#temporals.format(issuedOn, 'dd-MM-yyyy HH:mm')}"></td>
+                <td class="col-md-1 text-center" th:text="*{totalPrice}"></td>
+                <td class="col-md-2 text-center" th:text="*{status}"></td>
+                <td class="col-md-2 text-center mx-auto">
+                    <div class="text-center">
+                        <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                            <a th:href="@{/order/all/details/{id}(id=*{id})}" class="btn btn-info">Products</a>
+                        </th:block>
+                        <th:block sec:authorize="!hasRole('ROLE_ADMIN')">
+                            <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info">Products</a>
+                        </th:block>
+                    </div>
+                </td>
+            </tr>
+        </th:block>
+        </tbody>
+    </table>
+    <hr class="hr-2 bg-dark">
+</main>
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+<script th:src="@{/js/all-orders.js}"></script>
+</body>
+</html>

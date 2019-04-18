@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+<body>
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main>
+        <div>
+            <div class="row d-flex justify-content-between">
+                <div class="data col-md">
+                    <h1 class="text-center font-weight-bold" id="categoryTittle" th:text="|${categoryName} Products|"></h1>
+                </div>
+                <div class="print-container container-fluid">
+                    <div class="row mb-4 d-flex justify-content-start products-data">
+                        <div class="data col-md" th:if="${#lists.isEmpty(products)}">
+                            <h4 class="text-center" th:text="|There are no products in the ${categoryName} category.|"></h4>
+                        </div>
+                        <th:block th:each="product, iter : ${products}">
+                            <div class="product col-md-2 mt-2 bg-product rounded ml-4 mr-4 mb-5">
+                                <div class="text-center mt-3">
+                                    <a th:href="@{/products/details/{id}(id=${product.id})}">
+                                        <img th:src="${product.imageUrl}" class="product-image-home img-thumbnail px-auto" alt="Image not loaded..."/>
+                                    </a>
+                                </div>
+                                <h5 class="text-center font-weight-bold mt-3" th:text="|Name: ${product.name}|"></h5>
+                                <th:block th:if="${product.discountedPrice == null}">
+                                    <h5 class="text-center font-weight-bold" style="color: black" th:text="|Price: $${product.price}|"></h5>
+                                </th:block>
+                                <th:block th:if="${product.discountedPrice != null}">
+                                    <h5 class="text-center font-weight-bold" style="color: black" th:text="|Price: $${product.price}|"></h5>
+                                    <h5 class="text-center font-weight-bold" style="color: orangered" th:text="|New Price: $${product.discountedPrice}|"></h5>
+                                </th:block>
+                            </div>
+                        </th:block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</body>
+</html>

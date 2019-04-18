@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+<body>
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+<main class="mt-3">
+    <h1 class="text-center text-dark">Delete Category</h1>
+    <hr class="hr-2 bg-dark w-25">
+    <form id="edit-category-form" class="form w-25 mx-auto" th:action="@{/categories/delete/{id}(id=${model.id})}" method="post"><input type="hidden" name="_csrf" value="c686cd14-a7f9-4216-8009-c093b7d3df86">
+        <div class="form-group">
+            <label for="edit-category-name" class="font-weight-bold">Name</label>
+            <input type="text" class="form-control text-center" id="edit-category-name" name="name" th:value="${model.name}" readonly>
+        </div>
+        <hr class="hr-2 bg-dark">
+        <div class="button-holder d-flex justify-content-center">
+            <button type="submit" class="btn btn-danger">Delete Category</button>
+        </div>
+    </form>
+</main>
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+</body>
+</html>

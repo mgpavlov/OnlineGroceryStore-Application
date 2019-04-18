@@ -1,0 +1,153 @@
+.re-background {
+    background-color: #4fa36f;
+    color: white;
+}
+
+.bg-re {
+    background-color: #4fa36f;
+    color: white;
+}
+
+.bg-product {
+    /*background-color: #ddd;*/
+    color: #4fa36f;
+}
+
+.bg-re-form {
+    background-color: RGBA(255,255,255,0.2);
+
+    -webkit-box-shadow: 5px 5px 28px 5px rgba(0,0,0,0.8);
+    box-shadow: 5px 5px 28px 5px rgba(0,0,0,0.8);
+}
+
+a.custom-hover:hover, button.custom-hover:hover {
+    color: #900C45 !important;
+}
+
+.mc-404 {
+    min-height: 80vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 1;
+
+    background-image: url("https://cdn.searchenginejournal.com/wp-content/uploads/2017/08/25-Outstanding-404-Page-Examples-You-Have-to-See-760x400.png");
+}
+
+.mc-colorize {
+    /*color: #900C45;*/
+    color: #4fa36f;
+
+}
+
+.has-danger input, .has-danger textarea {
+    border-color: red;
+}
+
+.has-danger small {
+    color: red;
+}
+
+small.has-danger, label.has-danger{
+    color: red;
+}
+
+.mc-radio {
+    font-size: large;
+}
+
+/** NOTIFICATION **/
+#notifications {
+    float: right;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    text-align: center;
+    margin: 1em;
+}
+
+.notification {
+    font-size: 1.5em;
+    color: #ffffff;
+    display: none;
+    text-align: right;
+}
+
+.notification>span {
+    display: inline-block;
+    padding:  0.5em 2em 0.5em 2em;
+    border-radius: 10px;
+}
+
+#loadingBox>span {
+    background: #7CB3E9;
+}
+#infoBox>span {
+    background: #393;
+}
+#errorBox>span {
+    background: #F50;
+}
+/** NOTIFICATION END **/
+
+.background-img{
+    background: url("https://res.cloudinary.com/mgpavlov/image/upload/v1554123091/frontPage.jpg") no-repeat center ;
+    z-index:-1;
+    pointer-events: none;
+    margin: auto;
+    height: 100%;
+}
+
+.added-flight{
+    color: black;
+    cursor: pointer;
+    width: 400px;
+    border: 2px solid blue;
+    text-align: center;
+    background: cornflowerblue;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 250px;
+}
+
+img.img-thumbnail {
+      border: 2px solid #ddd; /*Gray border */
+   /* border: 5px solid #4fa36f;*/ /* греен border */
+    border-radius: 4px; /* Rounded border */
+    padding: 5px; /* Some padding */
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.center{
+    width: 150px;
+    margin: 40px auto;
+}
+
+.border-details {
+    border: 3px solid #4fa36f;;
+    border-radius: 7px;
+}
+
+.changeStatusButton {
+    background-color: #4fa36f;
+    color: white;
+}
+/*.btn {
+    background-color: #4fa36f;
+    color: white;
+}*/
+
+.btn-cornflowerblue {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.text-center, .brush-script, .text-white, .font-weight-bold, .d-inline-block, .d-flex {
+    /*font-family: "Brush Script MT", serif*/
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}

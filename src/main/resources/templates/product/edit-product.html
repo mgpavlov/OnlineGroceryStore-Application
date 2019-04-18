@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+<body>
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main class="mt-3">
+        <div class="jumbotron bg-re-form w-25 m-auto">
+            <h2 class="text-center mc-colorize">Edit Product</h2>
+            <form id="add-product-form" th:action="@{/products/edit/{id}(id=${productId})}" method="post"
+                  th:object="${model}"
+                  enctype="multipart/form-data"><input type="hidden" name="_csrf"
+                                                       value="c686cd14-a7f9-4216-8009-c093b7d3df86">
+                <th:block th:include="~{fragments/product-form}"></th:block>
+            </form>
+            <script>
+                $("#submitButton").text("Edit");
+            </script>
+        </div>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</body>
+</html>

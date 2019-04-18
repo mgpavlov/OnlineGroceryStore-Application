@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+<body>
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+<main class="mt-3">
+    <div class="jumbotron bg-re-form w-25 m-auto">
+        <h2 class="text-center mc-colorize">Edit Category</h2>
+        <form id="add-category-form" th:action="@{/categories/edit/{id}(id=${model.id})}" th:method="post" th:object="${model}">
+            <input type="hidden" name="_csrf" value="c686cd14-a7f9-4216-8009-c093b7d3df86" >
+            <div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'text-danger'">
+                <label for="add-category-name" class="font-weight-bold">Name</label>
+                <input type="text" th:field="*{name}" class="form-control" id="add-category-name"
+                       th:value="${model.name}" name="name">
+                <small id="nameHelp" th:each="error : ${#fields.errors('name')}" th:text="${error}">
+                    Error Message
+                </small>
+            </div>
+            <div class="button-holder d-flex justify-content-center">
+                <button type="submit" class="btn bg-re">Edit Category</button>
+            </div>
+        </form>
+    </div>
+</main>
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+</body>
+</html>

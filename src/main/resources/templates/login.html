@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+
+    <main class="mt-5">
+        <div class="jumbotron bg-re-form w-25 m-auto">
+            <th:block th:if="${param.logout}">
+                <div class="text-center  brush-script" style="color: #4fa36f">
+                    Successful logout
+                </div>
+            </th:block>
+            <h2 class="text-center mc-colorize brush-script">Sing In</h2>
+
+            <form th:action="@{/login}" th:method="POST">
+                <div class="form-group">
+                    <label for="inputUsername" class="brush-script">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" name="username"
+                           placeholder="Enter username...">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword" class="brush-script">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" name="password"
+                           placeholder="Password...">
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="inputCheckRememberMe">
+                    <label class="form-check-label brush-script" for="inputCheckRememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn w-100 bg-re"><i class="fas fa-sign-in-alt"></i>Login</button>
+            </form>
+            <th:block th:if="${param.error}">
+                <div class="text-center" style="color: red" th:text="${session.SPRING_SECURITY_LAST_EXCEPTION.message}">
+                    <!--Bad Credentials-->
+                </div>
+            </th:block>
+
+        </div>
+    </main>
+
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+
+</div>
+</body>
+</html>

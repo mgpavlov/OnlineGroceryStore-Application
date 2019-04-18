@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<th:block>
+    <div th:replace="fragments/header.html :: header"></div>
+</th:block>
+
+<main class="mt-3">
+    <h1 class="text-center text-dark mt-3" id="headline">My Orders</h1>
+    <hr class="hr-2 bg-re">
+
+
+    <div class="d-flex justify-content-between">
+        <div class="w-25 bg-white">
+            <h2 class="text-center">Pending</h2>
+            <div class="border-details p-1">
+                <th:block th:each="order, iter : ${myPendingOrders}" th:object="${order}">
+                    <div class="p-2 d-flex justify-content-around">
+                        <h5 class="w-75" th:text="|Issued on *{#temporals.format(issuedOn, 'dd-MMM-yy h:mm a')}|"></h5>
+                        <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info w-0">Details</a>
+                        <!--styleClass="btn bg-panda text-white w-25"/>-->
+                    </div>
+                </th:block>
+            </div>
+        </div>
+
+        <div class="w-25 bg-white">
+            <h2 class="text-center">Shipped</h2>
+            <div class="border-details p-1">
+                <th:block th:each="order, iter : ${myShippedOrders}" th:object="${order}">
+                    <div class="p-2 d-flex justify-content-around">
+                        <h5 class="w-100"
+                            th:text="|Shipped on *{#temporals.format(statusDate, 'dd-MMM-yy h:mm a')}|"></h5>
+                        <a th:href="@{/order/my/details/{id}(id=*{id})}" class="btn btn-info w-0">Details</a>
+                        <!--styleClass="btn bg-panda text-white w-25"/>-->
+                    </div>
+                </th:block>
+            </div>
+        </div>
+
+        <div class="w-40 bg-white">
+            <h2 class="text-center">Delivered</h2>
+            <div class="border-details p-1">
+                <th:block th:each="order, iter : ${myDeliveredOrders}" th:object="${order}">
+                    <div class="p-2 d-flex justify-content-around">
+                        <h5 class="w-75"
+                            th:text="|Delivered on *{#temporals.format(statusDate, 'dd-MMM-yy h:mm a')}|"></h5>
+                        <form th:action="@{/receipts/create}" th:method="post">
+                            <input type="hidden" name="orderId" th:value="*{id}">
+                            <div class="button-holder d-flex justify-content-center">
+                                <a th:href="@{/order/my/details/{id}(id=*{id})}"
+                                   class="btn btn-info ml-1 mr-1">Details</a>
+                                <button type="submit" class="btn btn-info">Acquire</button>
+                            </div>
+                        </form>
+                    </div>
+                </th:block>
+            </div>
+        </div>
+    </div>
+    <hr class="hr-2 bg-re">
+</main>
+<th:block>
+    <div th:replace="fragments/footer.html :: footer"></div>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+
+    <main class="mt-4">
+        <div class="jumbotron mt-3 mc-404">
+            <h1 class="mc-colorize">Page Not Found: ERROR 404!</h1>
+            <hr class="hr-2"/>
+            <h4 class="mc-colorize">This page doesn't exist...</h4>
+        </div>
+    </main>
+
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+
+</div>
+</body>
+</html>

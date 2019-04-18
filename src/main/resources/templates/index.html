@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+
+<th:block>
+    <div th:replace="fragments/head.html :: head"></div>
+</th:block>
+
+<body>
+<div class="container-fluid">
+    <th:block>
+        <div th:replace="fragments/header.html :: header"></div>
+    </th:block>
+    <main>
+        <p>
+            <a th:href="@{/register}">
+                <img border="0" alt="indexImg"
+                     src="https://res.cloudinary.com/mgpavlov/image/upload/v1555205797/frontPage.jpg"
+                     style="width: 100%; height: 100%">
+            </a>
+        </p>
+        <div>
+            <div class="row d-flex justify-content-between">
+                <div class="data col-md">
+                    <h1 class="text-center brush-script font-weight-bold">Clearance Up To 25% Off. Hurry Last Chance! While Supplies Last!</h1>
+                </div>
+                <div class="print-container container-fluid">
+                    <div class="row mb-4 d-flex justify-content-start products-data"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <th:block>
+        <div th:replace="fragments/footer.html :: footer"></div>
+    </th:block>
+</div>
+<script th:src="@{/js/sales.js}"></script>
+</body>
+</html>
