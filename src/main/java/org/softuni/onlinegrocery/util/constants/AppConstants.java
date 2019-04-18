@@ -9,6 +9,9 @@ public final class AppConstants {
     public static final String API_KEY = "api_key";
     public static final String API_SECRET = "api_secret";
 
+    public static final String UUID_STRING = "uuid-string";
+    public static final String UUID_GENERATOR = "org.hibernate.id.UUIDGenerator";
+
     public static final String FAVICON_URL= "https://res.cloudinary.com/mgpavlov/image/upload/v1554912174/icons8-shopping-cart-96.png";
     public static final String FAVICON= "favicon";
 
@@ -20,6 +23,7 @@ public final class AppConstants {
     public static final String TITLE_GROCERY_STORE = "Grocery Store";
     public static final String TITLE = "title";
     public static final String DASH = " - ";
+    public static final String EMPTY_STRING = "";
 
     public static final String MODEL = "model";
     public static final String USERNAME = "username";
@@ -65,4 +69,31 @@ public final class AppConstants {
     public static final String SHOPPING_CART = "shopping-cart";
 
     public static final String REDIRECT_BASE_CONTROLLER = "redirect:";
+    public static final String URL_TO_LOWERCASE = "url";
+    public static final String TEMP_FILE = "temp-file";
+
+    public static final String PRODUCTS_TO_LOWERCASE = "products";
+    public static final String PRODUCT_TO_LOWERCASE = "product";
+    public static final String PRODUCT_ID = "productId";
+    public static final String CATEGORY_NAME = "categoryName";
+
+
+    public static final int PRODUCT_NAME_MIN_LENGTH = 3;
+    public static final int PRODUCT_NAME_MAX_LENGTH = 20;
+    public static final int PRODUCT_DESCRIPTION_MAX_LENGTH = 50;
+    public static final int CATEGORY_NAME_MAX_LENGTH = 20;
+    public static final int USER_NAME_MIN_LENGTH = 3;
+    public static final int USER_NAME_MAX_LENGTH = 20;
+    public static final int PASSWORD_MIN_LENGTH = 3;
+
+    public static final int OFFER_SCHEDULED_FIX_RATE = 300000;//5 minutes
+    public static final int OFFER_SCHEDULED_NUMBER_OF_PRODUCTS = 10;
+    public static final int ZERO_NUMBER = 0;
+    public static final int ONE_NUMBER = 1;
+    public static final double OFFER_SCHEDULED_DISCOUNT = 0.75;//25%
+
+    public static final int GREETING_INTERCEPTOR_TWELVE = 12;
+    public static final int GREETING_INTERCEPTOR_SEVENTEEN = 17;
+
+
 }

@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Service
 public class OfferServiceImpl implements OfferService {
 
@@ -37,7 +39,7 @@ public class OfferServiceImpl implements OfferService {
                 .collect(Collectors.toList());
     }
 
-    @Scheduled(fixedRate = 300000)
+    @Scheduled(fixedRate = OFFER_SCHEDULED_FIX_RATE)
     private void generateOffers() {
         this.offerRepository.deleteAll();
         List<ProductServiceModel> products = this.productService
@@ -50,16 +52,16 @@ public class OfferServiceImpl implements OfferService {
             return;
         }
 
-        int n = products.size() > 10? 10 : products.size();
+        int n = products.size() > OFFER_SCHEDULED_NUMBER_OF_PRODUCTS? OFFER_SCHEDULED_NUMBER_OF_PRODUCTS : products.size();
 
         Random rnd = new Random();
         List<Offer> offers = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = ZERO_NUMBER; i < n; i++) {
             Offer offer = new Offer();
             offer.setProduct(this.modelMapper.map(products.get(rnd.nextInt(products.size())), Product.class));
-            offer.setPrice(offer.getProduct().getPrice().multiply(new BigDecimal(0.75)));
+            offer.setPrice(offer.getProduct().getPrice().multiply(new BigDecimal(OFFER_SCHEDULED_DISCOUNT)));
 
-            if (offers.stream().filter(o -> o.getProduct().getId().equals(offer.getProduct().getId())).count() == 0) {
+            if (offers.stream().filter(o -> o.getProduct().getId().equals(offer.getProduct().getId())).count() == ZERO_NUMBER) {
                 offers.add(offer);
             }
         }

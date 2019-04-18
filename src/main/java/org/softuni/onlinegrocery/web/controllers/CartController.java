@@ -144,7 +144,7 @@ public class CartController extends BaseController {
     }
 
     private BigDecimal calcTotal(List<ShoppingCartItem> cart) {
-        BigDecimal result = new BigDecimal(0);
+        BigDecimal result = new BigDecimal(ZERO_NUMBER);
         for (ShoppingCartItem item : cart) {
             result = result.add(item.getProduct().getPrice().multiply(new BigDecimal(item.getQuantity())));
         }
@@ -161,7 +161,7 @@ public class CartController extends BaseController {
             OrderProductServiceModel productServiceModel =
                     modelMapper.map(item.getProduct(), OrderProductServiceModel.class);
 
-            for (int i = 0; i < item.getQuantity(); i++) {
+            for (int i = ZERO_NUMBER; i < item.getQuantity(); i++) {
                 products.add(productServiceModel);
             }
         }

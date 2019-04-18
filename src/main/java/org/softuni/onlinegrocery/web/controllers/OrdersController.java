@@ -144,8 +144,8 @@ public class OrdersController extends BaseController {
         Map<OrderProductServiceModel, Integer> productItems = new HashMap<>();
 
         for (OrderProductServiceModel product: products) {
-            productItems.putIfAbsent(product, 0);
-            int quantity = productItems.get(product) + 1;
+            productItems.putIfAbsent(product, ZERO_NUMBER);
+            int quantity = productItems.get(product) + ONE_NUMBER;
             productItems.put(product, quantity);
         }
 

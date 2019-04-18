@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @Service
 public class CloudinaryServiceImpl implements CloudinaryService {
 
@@ -22,12 +24,12 @@ public class CloudinaryServiceImpl implements CloudinaryService {
     @Override
     public String uploadImage(MultipartFile multipartFile) throws IOException {
         File file = File
-                .createTempFile("temp-file", multipartFile.getOriginalFilename());
+                .createTempFile(TEMP_FILE, multipartFile.getOriginalFilename());
         multipartFile.transferTo(file);
 
         return this.cloudinary.uploader()
                 .upload(file, new HashMap())
-                .get("url").toString();
+                .get(URL_TO_LOWERCASE).toString();
     }
 
     @Override

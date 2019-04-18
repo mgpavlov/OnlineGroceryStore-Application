@@ -17,6 +17,7 @@ public final class ExceptionMessages {
     public static final String PRODUCT_NAME_EXIST_EX_MSG = "Product name exists.";
     public static final String PRODUCT_ID_DOESNT_EXIST_EX_MSG = "Product with the given id was not found!";
     public static final String RECEIPT_NAME_EXIST_EX_MSG = "Receipt name exists.";
+    public static final String THE_FIELDS_MUST_MATCH_EX_MSG = "The fields must match";
     public static final String PAGE_NOT_FOUND_EX_MSG = "Page Not Found: ERROR 404!\n" +
             "This page doesn't exist...";
 

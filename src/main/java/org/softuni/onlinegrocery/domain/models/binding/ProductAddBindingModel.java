@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
 import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
 
 
@@ -26,7 +27,7 @@ public class ProductAddBindingModel {
     }
 
     @NotNull(message = PRODUCT_NAME_EMPTY_FIELD_ERROR_MSG)
-    @Size(min = 3, max = 20, message = PRODUCT_NAME_LENGTH)
+    @Size(min = PRODUCT_NAME_MIN_LENGTH, max = PRODUCT_NAME_MAX_LENGTH, message = PRODUCT_NAME_LENGTH)
     public String getName() {
         return name;
     }
@@ -37,7 +38,7 @@ public class ProductAddBindingModel {
 
     @NotNull(message = PRODUCT_DESCRIPTION_EMPTY_FIELD_ERROR_MSG)
     @NotEmpty(message = PRODUCT_DESCRIPTION_EMPTY_FIELD_ERROR_MSG)
-    @Length(max = 50, message = PRODUCT_DESCRIPTION_MAX_LENGTH_ERROR_MSG)
+    @Length(max = PRODUCT_DESCRIPTION_MAX_LENGTH, message = PRODUCT_DESCRIPTION_MAX_LENGTH_ERROR_MSG)
     public String getDescription() {
         return description;
     }

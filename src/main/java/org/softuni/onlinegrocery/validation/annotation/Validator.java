@@ -8,6 +8,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.EMPTY_STRING;
+
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Component
@@ -16,5 +18,5 @@ public @interface Validator {
     @AliasFor(
             annotation = Component.class
     )
-    String value() default "";
+    String value() default EMPTY_STRING;
 }

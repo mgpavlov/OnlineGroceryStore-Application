@@ -60,7 +60,7 @@ public class ProductController extends BaseController {
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView addProductConfirm(@Valid @ModelAttribute(name = "model") ProductAddBindingModel model,
+    public ModelAndView addProductConfirm(@Valid @ModelAttribute(name = MODEL) ProductAddBindingModel model,
                                           BindingResult bindingResult,
                                           ModelAndView modelAndView) throws IOException {
         ProductServiceModel productServiceModel = modelMapper.map(model, ProductServiceModel.class);
@@ -81,7 +81,7 @@ public class ProductController extends BaseController {
         List<ProductAllViewModel> productAllViewModels =
                 mapProductServiceToViewModel(productService.findAllFilteredProducts());
 
-        modelAndView.addObject("products", productAllViewModels);
+        modelAndView.addObject(PRODUCTS_TO_LOWERCASE, productAllViewModels);
 
         return view("product/all-products", modelAndView);
     }
@@ -92,7 +92,7 @@ public class ProductController extends BaseController {
     public ModelAndView detailsProduct(@PathVariable String id, ModelAndView modelAndView) {
         ProductDetailsViewModel product =
                 modelMapper.map(productService.findProductById(id), ProductDetailsViewModel.class);
-        modelAndView.addObject("product", product);
+        modelAndView.addObject(PRODUCT_TO_LOWERCASE, product);
 
         return view("product/details", modelAndView);
     }
@@ -101,7 +101,7 @@ public class ProductController extends BaseController {
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     @PageTitle("Edit Product")
     public ModelAndView editProduct(@PathVariable String id, ModelAndView modelAndView,
-                                    @ModelAttribute("model") ProductAddBindingModel productAddBindingModel) {
+                                    @ModelAttribute(MODEL) ProductAddBindingModel productAddBindingModel) {
 
         productAddBindingModel =
                 this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
@@ -109,11 +109,11 @@ public class ProductController extends BaseController {
         List<CategoryViewModel> categoryViewModelList =
                 mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 
-        modelAndView.addObject("model", productAddBindingModel);
+        modelAndView.addObject(MODEL, productAddBindingModel);
 
-        modelAndView.addObject("categories", categoryViewModelList);
+        modelAndView.addObject(CATEGORIES_TO_LOWER_CASE, categoryViewModelList);
 
-        modelAndView.addObject("productId", id);
+        modelAndView.addObject(PRODUCT_ID, id);
 
         return view("product/edit-product", modelAndView);
     }
@@ -122,7 +122,7 @@ public class ProductController extends BaseController {
     @PostMapping("/edit/{id}")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
     public ModelAndView editProductConfirm(ModelAndView modelAndView, @PathVariable String id,
-                                           @Valid @ModelAttribute("model") ProductAddBindingModel model,
+                                           @Valid @ModelAttribute(MODEL) ProductAddBindingModel model,
                                            BindingResult bindingResult) throws IOException {
 
         boolean isNewImageUploaded = !model.getImage().isEmpty();
@@ -135,10 +135,10 @@ public class ProductController extends BaseController {
 
         if (bindingResult.hasErrors() ||
                 productService.editProduct(id, productServiceModel, isNewImageUploaded, model.getImage())==null) {
-            modelAndView.addObject("categories",
+            modelAndView.addObject(CATEGORIES_TO_LOWER_CASE,
                     mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
-            modelAndView.addObject("model", model);
-            modelAndView.addObject("productId", id);
+            modelAndView.addObject(MODEL, model);
+            modelAndView.addObject(PRODUCT_ID, id);
             return this.view("product/edit-product", modelAndView);
         }
 
@@ -170,12 +170,12 @@ public class ProductController extends BaseController {
 
                 @Override
                 public long getSize() {
-                    return 0;
+                    return ZERO_NUMBER;
                 }
 
                 @Override
                 public byte[] getBytes() throws IOException {
-                    return new byte[0];
+                    return new byte[ZERO_NUMBER];
                 }
 
                 @Override
@@ -201,12 +201,12 @@ public class ProductController extends BaseController {
 
         productAddBindingModel = this.modelMapper.map(productService.findProductById(id), ProductAddBindingModel.class);
 
-        modelAndView.addObject("model", productAddBindingModel);
+        modelAndView.addObject(MODEL, productAddBindingModel);
 
-        modelAndView.addObject("categories",
+        modelAndView.addObject(CATEGORIES_TO_LOWER_CASE,
                 mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories()));
 
-        modelAndView.addObject("productId", id);
+        modelAndView.addObject(PRODUCT_ID, id);
 
         return view("product/delete-product", modelAndView);
     }
@@ -229,9 +229,9 @@ public class ProductController extends BaseController {
         products = category.equals("All")? mapProductServiceToViewModel(productService.findAllFilteredProducts())
                 : mapProductServiceToViewModel(productService.findAllByCategoryFilteredProducts(category));
 
-        modelAndView.addObject("categoryName", category);
+        modelAndView.addObject(CATEGORY_NAME, category);
 
-        modelAndView.addObject("products", products);
+        modelAndView.addObject(PRODUCTS_TO_LOWERCASE, products);
 
         return view("product/show-products", modelAndView);
     }
@@ -247,7 +247,7 @@ public class ProductController extends BaseController {
     @GetMapping("/api/find")
     @ResponseBody
     @PreAuthorize("hasRole('ROLE_USER')")
-    public List<ProductAllViewModel> searchProducts(@RequestParam("product") String product) {
+    public List<ProductAllViewModel> searchProducts(@RequestParam(PRODUCT_TO_LOWERCASE) String product) {
 
         return mapProductServiceToViewModel(productService.findProductsByPartOfName(product));
     }
@@ -257,9 +257,9 @@ public class ProductController extends BaseController {
 
         List<CategoryViewModel> categories = mapCategoryServiceToViewModel(categoryService.findAllFilteredCategories());
 
-        modelAndView.addObject("model", productBindingModel);
+        modelAndView.addObject(MODEL, productBindingModel);
 
-        modelAndView.addObject("categories", categories);
+        modelAndView.addObject(CATEGORIES_TO_LOWER_CASE, categories);
 
         return view("product/add-product", modelAndView);
     }
@@ -278,18 +278,18 @@ public class ProductController extends BaseController {
 
     @ExceptionHandler({ProductNotFoundException.class})
     public ModelAndView handleProductNotFound(ProductNotFoundException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
+        ModelAndView modelAndView = new ModelAndView(ERROR);
+        modelAndView.addObject(MESSAGE, e.getMessage());
+        modelAndView.addObject(STATUS_CODE, e.getStatusCode());
 
         return modelAndView;
     }
 
     @ExceptionHandler({ProductNameAlreadyExistsException.class})
     public ModelAndView handleProductNameALreadyExist(ProductNameAlreadyExistsException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
+        ModelAndView modelAndView = new ModelAndView(ERROR);
+        modelAndView.addObject(MESSAGE, e.getMessage());
+        modelAndView.addObject(STATUS_CODE, e.getStatusCode());
 
         return modelAndView;
     }

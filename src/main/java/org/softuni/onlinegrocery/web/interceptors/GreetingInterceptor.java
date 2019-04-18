@@ -22,9 +22,9 @@ public class GreetingInterceptor implements HandlerInterceptor {
         } else {
             LocalTime time = LocalTime.now();
             int hrs = time.getHour();
-            if (hrs >= 0 && hrs <= 12) {
+            if (hrs >= ZERO_NUMBER && hrs <= GREETING_INTERCEPTOR_TWELVE) {
                 modelAndView.addObject(GREETING, GREETING_GOOD_MORNING);
-            } else if (hrs > 12 && hrs <= 17) {
+            } else if (hrs > GREETING_INTERCEPTOR_TWELVE && hrs <= GREETING_INTERCEPTOR_SEVENTEEN) {
                 modelAndView.addObject(GREETING, GREETING_GOOD_AFTERNOON);
             } else {
                 modelAndView.addObject(GREETING, GREETING_GOOD_EVENING);

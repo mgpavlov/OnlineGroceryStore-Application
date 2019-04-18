@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.OFFER_SCHEDULED_DISCOUNT;
 import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
 
 @Service
@@ -112,7 +113,7 @@ public class ProductServiceImpl implements ProductService {
 
         this.offerRepository.findByProduct_Id(product.getId())
                 .ifPresent((o) -> {
-                    o.setPrice(product.getPrice().multiply(new BigDecimal(0.75)));
+                    o.setPrice(product.getPrice().multiply(new BigDecimal(OFFER_SCHEDULED_DISCOUNT)));
 
                     this.offerRepository.save(o);
                 });

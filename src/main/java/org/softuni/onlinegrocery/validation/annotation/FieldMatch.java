@@ -10,6 +10,7 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.THE_FIELDS_MUST_MATCH_EX_MSG;
 
 @Target({TYPE, ANNOTATION_TYPE})
 @Retention(RUNTIME)
@@ -17,7 +18,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface FieldMatch
 {
-    String message() default "The fields must match";
+    String message() default THE_FIELDS_MUST_MATCH_EX_MSG;
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
     String first();

@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
 import static org.softuni.onlinegrocery.util.constants.ExceptionMessages.*;
 import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
 
@@ -26,7 +27,7 @@ public class UserRegisterBindingModel {
 
     @NotNull(message = INCORRECT_USERNAME_EMPTY_FIELD_ERROR_MSG)
     @NotEmpty(message = INCORRECT_USERNAME_EMPTY_FIELD_ERROR_MSG)
-    @Size(min = 3, max = 20, message = INCORRECT_USERNAME)
+    @Size(min = USER_NAME_MIN_LENGTH, max = USER_NAME_MAX_LENGTH, message = INCORRECT_USERNAME)
     public String getUsername() {
         return this.username;
     }
@@ -36,7 +37,7 @@ public class UserRegisterBindingModel {
     }
 
     @NotNull
-    @Size(min = 3, message = INCORRECT_PASSWORD)
+    @Size(min = PASSWORD_MIN_LENGTH, message = INCORRECT_PASSWORD)
 //    @Pattern(regexp = AppConstants.PASSWORD_VALIDATION_REGEX)
     public String getPassword() {
         return this.password;

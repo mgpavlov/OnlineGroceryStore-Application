@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+import static org.softuni.onlinegrocery.util.constants.ValidationErrorMessages.*;
+
 @Component
 public class DatabaseRolesSeeder {
 
@@ -21,16 +23,16 @@ public class DatabaseRolesSeeder {
     public void seed() {
         if (this.userRoleRepository.count() == 0) {
             Role rootAdmin = new Role();
-            rootAdmin.setAuthority("ROOT_ADMIN");
+            rootAdmin.setAuthority(ROLE_ADMIN);
 
             Role admin = new Role();
-            admin.setAuthority("ROLE_ADMIN");
+            admin.setAuthority(ROLE_ADMIN);
 
             Role moderator = new Role();
-            moderator.setAuthority("ROLE_MODERATOR");
+            moderator.setAuthority(ROLE_MODERATOR);
 
             Role user = new Role();
-            user.setAuthority("ROLE_USER");
+            user.setAuthority(ROLE_USER);
 
             this.userRoleRepository.save(rootAdmin);
             this.userRoleRepository.save(admin);

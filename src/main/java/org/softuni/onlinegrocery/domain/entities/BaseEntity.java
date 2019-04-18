@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import static org.softuni.onlinegrocery.util.constants.AppConstants.*;
+
 @MappedSuperclass
 public abstract class BaseEntity {
     private String id;
@@ -15,8 +17,8 @@ public abstract class BaseEntity {
     }
 
     @Id
-    @GeneratedValue(generator = "uuid-string")
-    @GenericGenerator(name = "uuid-string", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(generator = UUID_STRING)
+    @GenericGenerator(name = UUID_STRING, strategy = UUID_GENERATOR)
     @Column(name = "id", unique = true, nullable = false, updatable = false)
     public String getId() {
         return id;
