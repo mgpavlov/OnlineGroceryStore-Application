@@ -1,33 +1,18 @@
 # Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
 Developed an end to end Ecommerce web Application using Spring MVC with multiple modules
-___
-Online Grocery Shop is a system that registers users, categories, products and orders.When Orders are created, they are created with a Status, a Total Price, a Shipping Address and a Recipient User.
+__
+Online Grocery Shop is a system that registers users, categories, products and orders.
+__
 
-___
-
-## The Database of the Application support 3 entities:
-[User](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/java/pandaApp/domain/entities/User.java)
-* Has an Id – a UUID String
-* Has an Username
-* Has a Password
-* Has an Email
-* Has an Role – can be one of the following values (“User”, “Admin”)
-
-[Package](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/java/pandaApp/domain/entities/Package.java)
-* Has an Id – a UUID String
-* Has a Description – a string.
-* Has a Weight – a floating-point number.
-* Has a Shipping Address – a string.
-* Has a Status – can be one of the following values (“Pending”, “Shipped”, “Delivered”, “Acquired”)
-* Has an Estimated Delivery Date – A LocalDateTime object.
-* Has a Recipient – a User object.
-
-[Receipt](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/java/pandaApp/domain/entities/Receipt.java)
-* Has an Id – a UUID String
-* Has a Fee – a decimal number.
-* Has an Issued On – a LocalDateTime object.
-* Has a Recipient – a User object.
-* Has a Package – a Package object.
+## The Database of the Application support 8 entities:
+[User](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
+[Role](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Role.java)
+[Category](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Category.java)
+[Product](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Product.java)
+[OrderProduct](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/OrderProduct.java)
+[Order](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Order.java)
+[Offer](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
+[Receipt](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Receipt.java)
 __
 ### Functionalities:
 
@@ -183,7 +168,7 @@ Upon creation, a Receipt’s IssuedOn should be set to the current moment.
 * Admins (logged in) can access the Users Profiles functionality and change User Role except Root Admin profile.
 
 * Root Admin (logged in) can access every functionality a logged in Admin can.
-* Root Admin (logged in) role canot be changed.
+* Root Admin (logged in) role cannot be changed.
 
 ___
 ## Technologies
