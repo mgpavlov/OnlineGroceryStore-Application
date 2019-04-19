@@ -1,77 +1,12 @@
 # Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
-Developed an end to end Ecommerce web Application using Spring MVC with multiple modules.
-Online Grocery Shop is a system that registers users, categories, products and manage orders, create offers from random products with discount which are changed after a certain time.
+Developed an end to end Ecommerce web Application using Spring MVC.
+Online Grocery Shop is a system that registers users, categories, products, manages orders and creates offers from random discounted products which are changed after a certain time.
 ___
-
-## The Database of the Application support 8 entities:
-[User](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
-
-[Role](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Role.java)
-
-[Category](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Category.java)
-
-[Product](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Product.java)
-
-[OrderProduct](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/OrderProduct.java)
-
-[Order](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Order.java)
-
-[Offer](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
-
-[Receipt](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Receipt.java)
-___
-## Functionalities:
-
-1. User Registeration
-
-2. **CRUD Operations** like
-* Admin can change users ROLE ("ADMIN")
-* Admin can add category to the category list
-* Admin can edit the category details
-* Admin can delete the category from the list
-* Admin can add product to the product list
-* Admin can edit the product details
-* Admin can delete the product from the list
-* Admin can change order status
-* User can add product to his cart
-* User can order products and track orders.
-___
-## Setup
-Tested on Windows 8/10 x64
-### Versions
-* Java **11.0.2**
-* Maven **3.6.0**
-* Maven Compiler **3.8.0**
-* MySQL with mysql-connector-java **8.0.15**
-* hibernate-core **5.4.1.Final**
-* Apache TomEE 8.0.0.M2 **webprofile**
-### Other tools:
-* [ModelMapper](http://modelmapper.org/)
-* [Jargon2](https://github.com/kosprov/jargon2-api) - Fluent Java API for Argon2 password hashing
-### Environment configuration
-System and IDE should be configured to use:
-* [Java **11.0.2**](https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/) - [IntelliJ](https://stackoverflow.com/questions/18987228/how-do-i-change-the-intellij-idea-default-jdk)
-* [Maven **3.6.0**](http://maven.apache.org/install.html) - [IntelliJ](https://www.jetbrains.com/help/idea/maven-support.html#create_new_maven_project)
-* [mysql-connector-java **8.0.15**](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-installing-classpath.html) - [IntelliJ](https://www.jetbrains.com/help/idea/connecting-to-a-database.html)
-___
-#### Project configuration
-* [pom.xml](https://github.com/ivelin1936/Panda-Application/blob/master/pom.xml) - project setup - dependencies, compile, packaging
-* [beans.xml](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/webapp/WEB-INF/beans.xml) - default setup with 
-## The Database of the PANDA application support 3 entities:
-[User](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/java/pandaApp/domain/entities/User.java)
-* Has an Id – a UUID String
-* Has an Username
-* Has a Password
-* Has an Email
-* Has an Role – can be one of the following values (“User”, “Admin”)
-
-
 ## Project Functionality
-
 ### Users
 The first registered User should be assigned a role – "Root Admin". Every User after that, should have a role – "User".
 "Root Admin" can change other users Role to "Moderator" or "Admin".
-Users can add products to their "Bag" and after that can chekout products and create order with status "Pending".User's Orders are created and controlled for them, by an Administrator("Admin" or "Moderator"). 
+Users can add products to their "Bag" and after that can chekout products and create order with status "Pending". User's Orders are created and controlled for them, by an Administrator("Admin" or "Moderator"). 
 Users can view Details about their own Orders. When a Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
 Administrators (role = "Admin", "Moderator") are essentially like normal Users. They can also have Orders, which are delivered, acquired and they also have Receipts. 
 Administrators can also manage orders for a specific User. 
@@ -82,15 +17,21 @@ Administrators can also manage orders for a specific User.
 ##### The application provide Guest (not logged in) users with the functionality to:
 * Login 
 * Register
-* View the Guest Index page
+* View the Guest Index page with Sales products
 ##### The application provide Users (logged in) with the functionality to:
 * Logout
+* Buy Products
+* Create Orders
 * View their Orders
 * View details about a Order
 * View their Receipts
 * View details about a Receipt
 ##### The application provide Admins (logged in, with role - Admin) with the functionality to:
 * Logout
+* Manage all Products
+* Manage all Categories
+* Buy Products
+* Create Orders
 * View their Orders
 * View details about a Order
 * View their Receipts
@@ -107,12 +48,12 @@ When Orders are created, they are created with a list of Products, a Total Price
 * Upon creation, the Status of a Order should be set to Pending.
 * Upon creation, the Issued On Date of a Order should be set to current date.
 #### Pending Packages
-A Pending Order, can be Shipped by an Administrator, by clicking on the [Ship] button from the Pending Orders Page. At that moment the Order Status becomes "Shipped" and the Status Date is to be set to a current date.
+A Pending Order, can be Shipped by an Administrator, by clicking on the [Ship] button from the Pending Orders Page. At that moment the Order Status becomes "Shipped" and the Status Date (Shipped On) is to be set to a current date.
 * All Pending Orders are presented on the Pending Orders Page.
 * A User can view his Pending Orders on his My Orders Page in the Pending rectangular block.
 * A User can view details about each one of his Pending Orders from his My Orders Page, by clicking on the [Details] button.
 #### Shipped Packages
-A Shipped Package, can be Delivered by an Administrator, by clicking on the [Deliver] button from the Shipped Packages Page. At that moment the Package Status becomes "Delivered".
+A Shipped Package, can be Delivered by an Administrator, by clicking on the [Deliver] button from the Shipped Packages Page. At that moment the Package Status becomes "Delivered" and the Status Date (Delivered On) is to be set to a current date.
 * All Shipped Packages are presented on the Shipped Packages Page.
 * A User can view his Shipped Packages on his Index Page in the Shipped rectangular block.
 * A User can view details about each one of his Shipped Packages from his Index Page, by clicking on the [Details] button.
@@ -162,6 +103,26 @@ Upon creation, a Receipt’s IssuedOn should be set to the current moment.
 * Root Admin (logged in) role cannot be changed.
 
 ___
+
+## The Database of the Application support 8 entities:
+
+[User](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
+
+[Role](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Role.java)
+
+[Category](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Category.java)
+
+[Product](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Product.java)
+
+[OrderProduct](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/OrderProduct.java)
+
+[Order](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Order.java)
+
+[Offer](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
+
+[Receipt](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Receipt.java)
+
+
 ## Technologies
 * Java - [JDK11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 
@@ -178,3 +139,26 @@ ___
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+___
+## Setup
+Tested on Windows 8/10 x64
+### Versions
+* Java **11.0.2**
+* Maven **3.6.0**
+* Maven Compiler **3.8.0**
+* MySQL with mysql-connector-java **8.0.15**
+* hibernate-core **5.4.1.Final**
+* Apache TomEE 8.0.0.M2 **webprofile**
+### Other tools:
+* [ModelMapper](http://modelmapper.org/)
+* [Jargon2](https://github.com/kosprov/jargon2-api) - Fluent Java API for Argon2 password hashing
+### Environment configuration
+System and IDE should be configured to use:
+* [Java **11.0.2**](https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/) - [IntelliJ](https://stackoverflow.com/questions/18987228/how-do-i-change-the-intellij-idea-default-jdk)
+* [Maven **3.6.0**](http://maven.apache.org/install.html) - [IntelliJ](https://www.jetbrains.com/help/idea/maven-support.html#create_new_maven_project)
+* [mysql-connector-java **8.0.15**](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-installing-classpath.html) - [IntelliJ](https://www.jetbrains.com/help/idea/connecting-to-a-database.html)
+___
+#### Project configuration
+* [pom.xml](https://github.com/ivelin1936/Panda-Application/blob/master/pom.xml) - project setup - dependencies, compile, packaging
+* [beans.xml](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/webapp/WEB-INF/beans.xml) - default setup with 
