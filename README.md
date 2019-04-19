@@ -1,6 +1,6 @@
 # Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
 Developed an end to end Ecommerce web Application using Spring MVC with multiple modules.
-Online Grocery Shop is a system that registers users, categories, products and orders.
+Online Grocery Shop is a system that registers users, categories, products and manage orders, create offers from random products with discount which are changed after a certain time.
 ___
 
 ## The Database of the Application support 8 entities:
@@ -19,10 +19,8 @@ ___
 [Offer](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
 
 [Receipt](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Receipt.java)
-
-__
-
-### Functionalities:
+___
+## Functionalities:
 
 1. User Registeration
 
@@ -67,34 +65,19 @@ ___
 * Has an Email
 * Has an Role – can be one of the following values (“User”, “Admin”)
 
-[Package](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/java/pandaApp/domain/entities/Package.java)
-* Has an Id – a UUID String
-* Has a Description – a string.
-* Has a Weight – a floating-point number.
-* Has a Shipping Address – a string.
-* Has a Status – can be one of the following values (“Pending”, “Shipped”, “Delivered”, “Acquired”)
-* Has an Estimated Delivery Date – A LocalDateTime object.
-* Has a Recipient – a User object.
-
-[Receipt](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/java/pandaApp/domain/entities/Receipt.java)
-* Has an Id – a UUID String
-* Has a Fee – a decimal number.
-* Has an Issued On – a LocalDateTime object.
-* Has a Recipient – a User object.
-* Has a Package – a Package object.
 
 ## Project Functionality
+
 ### Users
 The first registered User should be assigned a role – "Root Admin". Every User after that, should have a role – "User".
-Users have Packages, which are created and controlled for them, by an Administrator. 
-Users can view Details about their own Orders. 
-When a Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. 
-Users can view their Receipts, and details about each Receipt.
-Administrators (role = "Admin") are essentially like normal Users. They can also have Orders, which are delivered, acquired and they also have Receipts. 
-Administrators can also create Orders for a specific User. 
-* They can also view all Pending Packages, and they can Ship them.
-* They can also view all Shipped Packages, and they can Deliver them.
-* They can also view all Delivered Packages, and they can view Details about them.
+"Root Admin" can change other users Role to "Moderator" or "Admin".
+Users can add products to their "Bag" and after that can chekout products and create order with status "Pending".User's Orders are created and controlled for them, by an Administrator("Admin" or "Moderator"). 
+Users can view Details about their own Orders. When a Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
+Administrators (role = "Admin", "Moderator") are essentially like normal Users. They can also have Orders, which are delivered, acquired and they also have Receipts. 
+Administrators can also manage orders for a specific User. 
+* They can also view all Pending Orders, and they can Ship them.
+* They can also view all Shipped Orders, and they can Deliver them.
+* They can also view all Delivered Orders, and they can view Details about them.
 
 ##### The application provide Guest (not logged in) users with the functionality to:
 * Login 
