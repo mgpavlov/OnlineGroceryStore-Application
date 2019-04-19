@@ -3,16 +3,17 @@ Developed an end to end Ecommerce web Application using Spring MVC.
 Online Grocery Shop is a system that registers users, categories, products, manages orders and creates offers from random discounted products which are changed after a certain time.
 ___
 ## Project Functionality
-### Users
+
+### [Users](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
 The first registered User should be assigned a role – "Root Admin". Every User after that, should have a role – "User".
 "Root Admin" can change other users Role to "Moderator" or "Admin".
 Users can add products to their "Bag" and after that can chekout products and create order with status "Pending". User's Orders are created and controlled for them, by an Administrator("Admin" or "Moderator"). 
 Users can view Details about their own Orders. When a Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
 Administrators (role = "Admin", "Moderator") are essentially like normal Users. They can also have Orders, which are delivered, acquired and they also have Receipts. 
 Administrators can also manage orders for a specific User. 
-* They can also view all Pending Orders, and they can Ship them.
-* They can also view all Shipped Orders, and they can Deliver them.
-* They can also view all Delivered Orders, and they can view Details about them.
+* They can view all Pending Orders, and they can Ship them.
+* They can view all Shipped Orders, and they can Deliver them.
+* They can view all Delivered Orders, and they can view Details about them.
 
 ##### The application provide Guest (not logged in) users with the functionality to:
 * Login 
@@ -43,16 +44,21 @@ Administrators can also manage orders for a specific User.
 * Ship Orders
 * Deliver Orders
 
-### Orders
+###[Products](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Product.java)
+Products are created with a Name, a Description, a Price, a Image Url, and Categories to wich it belongs. 
+###[Offers](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
+Offers are created randomly using The @Scheduled Annotation in Spring
+with random Product and new discounted Price;
+### [Orders](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Order.java)
 When Orders are created, they are created with a list of Products, a Total Price, a Shipping Address and a Recipient User. 
 * Upon creation, the Status of a Order should be set to Pending.
 * Upon creation, the Issued On Date of a Order should be set to current date.
-#### Pending Packages
+#### Pending Orders
 A Pending Order, can be Shipped by an Administrator, by clicking on the [Ship] button from the Pending Orders Page. At that moment the Order Status becomes "Shipped" and the Status Date (Shipped On) is to be set to a current date.
 * All Pending Orders are presented on the Pending Orders Page.
 * A User can view his Pending Orders on his My Orders Page in the Pending rectangular block.
 * A User can view details about each one of his Pending Orders from his My Orders Page, by clicking on the [Details] button.
-#### Shipped Packages
+#### Shipped Orders
 A Shipped Package, can be Delivered by an Administrator, by clicking on the [Deliver] button from the Shipped Packages Page. At that moment the Package Status becomes "Delivered" and the Status Date (Delivered On) is to be set to a current date.
 * All Shipped Packages are presented on the Shipped Packages Page.
 * A User can view his Shipped Packages on his Index Page in the Shipped rectangular block.
@@ -68,7 +74,7 @@ NOTE: Acquired Packages are viewable only by Administrators on the Delivered Pac
 NOTE: Administrators can view details about ALL Delivered / Acquired Packages from the
 Delivered Packages Page, by clicking on the [Details] button.
 
-### Receipts
+### [Receipts](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Receipt.java)
 Receipts are just data entities. They are created when a Order is Acquired by its Recipient User. 
 A Receipt should be created with a Order and a Recipient User.
 Upon creation, a Receipt’s IssuedOn should be set to the current moment.
@@ -139,7 +145,6 @@ ___
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ___
 ## Setup
 Tested on Windows 8/10 x64
@@ -148,8 +153,6 @@ Tested on Windows 8/10 x64
 * Maven **3.6.0**
 * Maven Compiler **3.8.0**
 * MySQL with mysql-connector-java **8.0.15**
-* hibernate-core **5.4.1.Final**
-* Apache TomEE 8.0.0.M2 **webprofile**
 ### Other tools:
 * [ModelMapper](http://modelmapper.org/)
 * [Jargon2](https://github.com/kosprov/jargon2-api) - Fluent Java API for Argon2 password hashing
@@ -157,8 +160,7 @@ Tested on Windows 8/10 x64
 System and IDE should be configured to use:
 * [Java **11.0.2**](https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/) - [IntelliJ](https://stackoverflow.com/questions/18987228/how-do-i-change-the-intellij-idea-default-jdk)
 * [Maven **3.6.0**](http://maven.apache.org/install.html) - [IntelliJ](https://www.jetbrains.com/help/idea/maven-support.html#create_new_maven_project)
-* [mysql-connector-java **8.0.15**](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-installing-classpath.html) - [IntelliJ](https://www.jetbrains.com/help/idea/connecting-to-a-database.html)
+* [mysql-connector-java](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-installing-classpath.html) - [IntelliJ](https://www.jetbrains.com/help/idea/connecting-to-a-database.html)
 ___
 #### Project configuration
-* [pom.xml](https://github.com/ivelin1936/Panda-Application/blob/master/pom.xml) - project setup - dependencies, compile, packaging
-* [beans.xml](https://github.com/ivelin1936/Panda-Application/blob/master/src/main/webapp/WEB-INF/beans.xml) - default setup with 
+* [pom.xml](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/pom.xml) - project setup - dependencies, compile, packaging
