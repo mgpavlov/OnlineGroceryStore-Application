@@ -27,6 +27,22 @@ Administrators can also manage orders for a specific User.
 * View details about a Order
 * View their Receipts
 * View details about a Receipt
+##### The application provide Moderators (logged in, with role - Moderator) with the functionality to:
+* Logout
+* Manage all Products
+* Manage all Categories
+* Buy Products
+* Create Orders
+* View their Orders
+* View details about a Order
+* View their Receipts
+* View details about a Receipt
+* View all Pending Orders
+* View all Shipped Orders
+* View all Delivered Orders
+* View details about all Delivered Orders
+* Ship Orders
+* Deliver Orders
 ##### The application provide Admins (logged in, with role - Admin) with the functionality to:
 * Logout
 * Manage all Products
@@ -43,10 +59,11 @@ Administrators can also manage orders for a specific User.
 * View details about all Delivered Orders
 * Ship Orders
 * Deliver Orders
+* Change all Users Role except Root Admin profile.
 
-###[Products](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Product.java)
+### [Products](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Product.java)
 Products are created with a Name, a Description, a Price, a Image Url, and Categories to wich it belongs. 
-###[Offers](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
+### [Offers](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Offer.java)
 Offers are created randomly using The @Scheduled Annotation in Spring
 with random Product and new discounted Price;
 ### [Orders](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Order.java)
@@ -150,12 +167,13 @@ ___
 Tested on Windows 8/10 x64
 ### Versions
 * Java **11.0.2**
+* Spring Boot **2.1.3.RELEASE**
 * Maven **3.6.0**
 * Maven Compiler **3.8.0**
 * MySQL with mysql-connector-java **8.0.15**
 ### Other tools:
 * [ModelMapper](http://modelmapper.org/)
-* [Jargon2](https://github.com/kosprov/jargon2-api) - Fluent Java API for Argon2 password hashing
+* [Cloudinary](https://cloudinary.com/) - Cloud-based image and video management platform.
 ### Environment configuration
 System and IDE should be configured to use:
 * [Java **11.0.2**](https://docs.oracle.com/cd/E19509-01/820-3208/inst_cli_jdk_javahome_t/) - [IntelliJ](https://stackoverflow.com/questions/18987228/how-do-i-change-the-intellij-idea-default-jdk)
@@ -164,3 +182,5 @@ System and IDE should be configured to use:
 ___
 #### Project configuration
 * [pom.xml](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/pom.xml) - project setup - dependencies, compile, packaging
+* [application.properties](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/application.properties) 
+___
