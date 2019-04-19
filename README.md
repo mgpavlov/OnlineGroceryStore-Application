@@ -186,13 +186,21 @@ ___
 ___
 ### ScreenShots:
 
-* Index Page 1:
+* Index Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/index-page-1.jpg "Index Page")
 
-* Index Page 2:
+* Index Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/index-page-2.jpg "Index Page")
+
+* Register Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/register-page.jpg "Register Page")
+
+* Login Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/login-page.jpg "Login Page")
 
 * Admin Home Page:
 
