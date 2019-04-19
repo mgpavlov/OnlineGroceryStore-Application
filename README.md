@@ -1,5 +1,5 @@
 # Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
-Developed an end to end Ecommerce web Application using Spring MVC.
+Developed an end to end e-Commerce web Application using Spring MVC.
 Online Grocery Shop is a system that registers users, categories, products, manages orders and creates offers from random discounted products which are changed after a certain time.
 ___
 ## Project Functionality
