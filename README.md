@@ -197,3 +197,15 @@ ___
 * Admin Home Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/admin-home-page.jpg "Admin Home Page")
+
+* User Home Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/user-home-page.jpg "User Home Page")
+
+* Shopping Cart Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/shopping-cart-page.jpg "Shopping Cart Page")
+
+* Add Product Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/add-product-page.jpg "Add Product Page")
