@@ -184,3 +184,12 @@ ___
 * [pom.xml](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/pom.xml) - project setup - dependencies, compile, packaging
 * [application.properties](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/application.properties) 
 ___
+### ScreenShots:
+
+* Home Page:
+
+![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
+
+* Contact Us:
+
+![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/ContactUs.png)
