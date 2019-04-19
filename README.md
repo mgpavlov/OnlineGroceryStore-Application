@@ -1,8 +1,7 @@
 # Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
-Developed an end to end Ecommerce web Application using Spring MVC with multiple modules
-__
+Developed an end to end Ecommerce web Application using Spring MVC with multiple modules.
 Online Grocery Shop is a system that registers users, categories, products and orders.
-__
+___
 
 ## The Database of the Application support 8 entities:
 [User](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
