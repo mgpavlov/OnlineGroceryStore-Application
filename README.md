@@ -21,7 +21,7 @@ __
 
 [Receipt](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/Receipt.java)
 
-__
+___
 
 ### Functionalities:
 
