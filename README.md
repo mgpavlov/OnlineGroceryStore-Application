@@ -232,3 +232,19 @@ ___
 * User Profile Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/user-profile-page.jpg "Users Profile Page")
+
+* My Orders Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/my-orders-page.jpg "My Orders Page")
+
+* Order Details Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/order-details-page.jpg "Order Details Page")
+
+* Pending Orders Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/pending-orders-page.jpg "Pending Orders Page")
+
+* Shipped Orders Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/shipped-orders-page.jpg "Shipped Orders Page")
