@@ -1,14 +1,14 @@
 # Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
 Developed an end to end e-Commerce web Application using Spring MVC.
-Online Grocery Shop is a system that registers users, categories, products, manages orders and creates offers from random discounted products which are changed after a certain time.
+Online Grocery Shop is a system that registers users, categories, products, manages orders.It creates offers for random discounted products which are changed after a certain time.
 ___
 ## Project Functionality
 
 ### [Users](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
 The first registered User should be assigned a role – "Root Admin". Every User after that, should have a role – "User".
 "Root Admin" can change other users Role to "Moderator" or "Admin".
-Users can add products to their "Bag" and after that can chekout products and create order with status "Pending". User's Orders are controlled for them, by an Administrators(role = "Admin" or "Moderator"). 
-Users can view Details about their own Orders. When a Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
+Users can add products to their "Bag" and after that can chekout products and create order with status "Pending". User's Orders are controlled for them, by Administrators (role = "Admin" or "Moderator"). 
+Users can view Details about their own Orders. When an Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
 Administrators (role = "Admin", "Moderator") are essentially like normal Users. They can also have Orders, which are delivered, acquired and they also have Receipts. 
 Administrators can also manage orders for a specific User. 
 * They can view all Pending Orders, and they can Ship them.
