@@ -224,3 +224,11 @@ ___
 * Add Product Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/add-product-page.jpg "Add Product Page")
+
+* Users List Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/users-list-page.jpg "Users List Page")
+
+* User Profile Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/user-profile-page.jpg "Users Profile Page")
