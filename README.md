@@ -1,6 +1,6 @@
 # Online Grocery Store
 
-<div align="center">
+<div align="left">
 
 [![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
 
