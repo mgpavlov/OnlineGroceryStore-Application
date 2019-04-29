@@ -1,14 +1,21 @@
-# Online Grocery Store[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
+# Online Grocery Store
+
+<div align="left">
+
+[![HitCount](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application.svg)](http://hits.dwyl.io/mgpavlov/OnlineGroceryStore-Application)
+
+</div>
+
 Developed an end to end e-Commerce web Application using Spring MVC.
-Online Grocery Shop is a system that registers users, categories, products, manages orders and creates offers from random discounted products which are changed after a certain time.
+Online Grocery Shop is a system that registers users, categories, products, manages orders.It creates offers for random discounted products which are changed after a certain time.
 ___
 ## Project Functionality
 
 ### [Users](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/java/org/softuni/onlinegrocery/domain/entities/User.java)
 The first registered User should be assigned a role – "Root Admin". Every User after that, should have a role – "User".
 "Root Admin" can change other users Role to "Moderator" or "Admin".
-Users can add products to their "Bag" and after that can chekout products and create order with status "Pending". User's Orders are controlled for them, by an Administrators(role = "Admin" or "Moderator"). 
-Users can view Details about their own Orders. When a Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
+Users can add products to their "Bag" and after that can chekout products and create order with status "Pending". User's Orders are controlled for them, by Administrators (role = "Admin" or "Moderator"). 
+Users can view Details about their own Orders. When an Order is delivered, a User can acquire it, at which point a Receipt is created with that Order and that User. Users can view their Receipts, and details about each Receipt.
 Administrators (role = "Admin", "Moderator") are essentially like normal Users. They can also have Orders, which are delivered, acquired and they also have Receipts. 
 Administrators can also manage orders for a specific User. 
 * They can view all Pending Orders, and they can Ship them.
@@ -161,7 +168,7 @@ ___
 * [LinkedIn](https://www.linkedin.com/in/mihail-georgiev-pavlov/)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/LICENSE) file for details
 ___
 ## Setup
 Tested on Windows 8/10 x64
@@ -186,14 +193,58 @@ ___
 ___
 ### ScreenShots:
 
-* Index Page 1:
+* Index Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/index-page-1.jpg "Index Page")
 
-* Index Page 2:
+* Index Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/index-page-2.jpg "Index Page")
+
+* Register Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/register-page.jpg "Register Page")
+
+* Login Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/login-page.jpg "Login Page")
 
 * Admin Home Page:
 
 ![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/admin-home-page.jpg "Admin Home Page")
+
+* User Home Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/user-home-page.jpg "User Home Page")
+
+* Shopping Cart Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/shopping-cart-page.jpg "Shopping Cart Page")
+
+* Add Product Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/add-product-page.jpg "Add Product Page")
+
+* Users List Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/users-list-page.jpg "Users List Page")
+
+* User Profile Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/user-profile-page.jpg "Users Profile Page")
+
+* My Orders Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/my-orders-page.jpg "My Orders Page")
+
+* Order Details Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/order-details-page.jpg "Order Details Page")
+
+* Pending Orders Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/pending-orders-page.jpg "Pending Orders Page")
+
+* Shipped Orders Page:
+
+![Alt text](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/screenshots/shipped-orders-page.jpg "Shipped Orders Page")
