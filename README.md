@@ -168,7 +168,7 @@ ___
 * [LinkedIn](https://www.linkedin.com/in/mihail-georgiev-pavlov/)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/LICENSE) file for details
 ___
 ## Setup
 Tested on Windows 8/10 x64
