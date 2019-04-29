@@ -1,3 +1,23 @@
+<table border="0" width="100%" cellspacing="1" cellpadding="3" align="center">
+<tbody>
+<tr>
+<td align="center" width="33%"><img style="text-align: ce;" src="https://github.com/mgpavlov/OnlineGroceryStore-Application/blob/master/src/main/resources/data/groceryStoreLogo.png" alt="" /></td>
+<td align="center" width="33%">
+<h1><a href="https://github.com/mgpavlov">Online Grocery Store</a></h1>
+<h2>Java Web Developer - Professional Module @SoftUni</h2>
+</td>
+<td align="center" width="33%"><img src="https://avatars0.githubusercontent.com/u/30524177?s=460&v=4" alt="" />
+<img src="https://www.linkedin.com/favicon.ico" alt="LinkedIn" />
+Author: 
+<strong>
+<a title="LinkedIn Mihail Pavlov" href="https://www.linkedin.com/in/mihail-georgiev-pavlov/" target="_blank">
+Mihail Pavlov
+</a>
+</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
 # Online Grocery Store
 
 <div align="left">
