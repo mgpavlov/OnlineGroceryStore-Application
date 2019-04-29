@@ -27,7 +27,6 @@ Mihail Pavlov
 
 </div>
 
-Developed an end to end e-Commerce web Application using Spring MVC.
 Online Grocery Shop is a system that registers users, categories, products, manages orders.It creates offers for random discounted products which are changed after a certain time.
 ___
 ## Project Functionality
